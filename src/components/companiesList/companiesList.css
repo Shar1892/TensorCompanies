@@ -1,0 +1,43 @@
+.companiesList {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	border-top-right-radius: 8px;
+	background-color: #ffffff;
+	box-shadow: 0 -2px 2px #ccc;
+	box-sizing: border-box;
+	height: calc(100vh - 44px);
+}
+
+.companiesList__header {
+	display: grid;
+	grid-template-columns: 1fr 200px;
+	column-gap: 20px;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	padding: 0 16px;
+	box-sizing: border-box;
+}
+
+.companiesList__requisites-container {
+	display: flex;
+	align-items: center;
+}
+
+.companiesList__description-title {
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--pale-text-color);
+	font-weight: bold;
+}
+
+.companiesList__requisites-title {
+	width: 100px;
+	display: flex;
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--pale-text-color);
+	font-weight: normal;
+}
