@@ -17,13 +17,9 @@
 	border: none;
 	outline: none;
 	padding: 0;
-	font-size: 15px;
-	line-height: 18px;
-	color: #000000;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-style: normal;
+	font-size: var(--text-size-large);
+	color: var(--simple-text-color);
 	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
