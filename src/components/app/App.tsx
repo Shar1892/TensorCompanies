@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='App__context'>
+      <div className='App__content'>
         <Header />
         <CompaniesList allCompanies={companies}/>
       </div>
