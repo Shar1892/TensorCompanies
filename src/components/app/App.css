@@ -28,7 +28,7 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.App__context {
+.App__content {
 	position: relative;
 	background-color: #f8f8f8;
 	width: 80%;
@@ -41,6 +41,6 @@
 	align-items: center;
 }
 
-.page_hidden {
+.App__content_hidden {
 	display: none;
 }
