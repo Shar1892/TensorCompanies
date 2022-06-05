@@ -3,11 +3,9 @@ import {useEffect, useState} from 'react';
 import './App.css';
 
 import * as Api from '../../utils/APICompanies';
-
 import {ICompany} from '../../utils/interfaces';
 
-import Header from '../Header/Header';
-import CompaniesList from '../companiesList/companiesList';
+import CompaniesMain from '../companiesMain/companiesMain';
 
 function App() {
 
@@ -22,10 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='App__content'>
-        <Header />
-        <CompaniesList allCompanies={companies}/>
-      </div>
+      <CompaniesMain allCompanies={companies}/>
     </div>
   );
 }

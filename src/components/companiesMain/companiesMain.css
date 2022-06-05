@@ -1,0 +1,16 @@
+.companiesMain {
+	position: relative;
+	background-color: #f8f8f8;
+	width: 80%;
+	max-width: 1144px;
+	min-width: 768px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+.companiesMain_hidden {
+	display: none;
+}
