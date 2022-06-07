@@ -5,10 +5,10 @@ import CompaniesList from '../companiesList/companiesList';
 
 import {ICompany} from '../../utils/interfaces';
 
-function CompaniesMain({allCompanies}: {allCompanies: ICompany[]}) {
+function CompaniesMain({allCompanies, isVisible}: {allCompanies: ICompany[]; isVisible: boolean}) {
 
   return (
-    <div className="companiesMain">
+    <div className={`companiesMain ${isVisible ? 'companiesMain_hidden' : ''}`}>
         <Header />
         <CompaniesList allCompanies={allCompanies}/>
     </div>
