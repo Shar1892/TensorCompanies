@@ -1,0 +1,23 @@
+.card {
+	display: grid;
+	grid-template-rows: 70px 1fr;
+	width: 60%;
+	height: 100vh;
+	background-color: #ffffff;
+	box-shadow: -10px 0 10px #ccc;
+}
+
+.card_close {
+	display: none;
+}
+
+.card__main {
+	display: grid;
+	grid-template-columns: 1fr 250px;
+	width: 100%;
+}
+
+.card__content {
+	display: flex;
+	width: 100%;
+}
