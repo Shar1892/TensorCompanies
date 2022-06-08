@@ -1,18 +1,25 @@
 import './companyPreview.css';
 
-function CompanyPreview({companyData}: {companyData: {
-  inn: string;
-  company_name: string;
-  region: string;
-  director_egrul_surname: string;
-  director_egrul_name: string;
-  director_egrul_patronymic: string;
-  activity_kind: string;
-  kpp: string;
-}}) {
+function CompanyPreview({
+  companyData,
+  openCard
+}: {
+  companyData: {
+    inn: string;
+    company_name: string;
+    region: string;
+    director_egrul_surname: string;
+    director_egrul_name: string;
+    director_egrul_patronymic: string;
+    activity_kind: string;
+    kpp: string;
+  };
+  openCard: (inn: string) => void 
+}) {
 
   const handleOpenCompany = (): void => {
     console.log(companyData);
+    openCard(companyData.inn);
   }
 
   return (

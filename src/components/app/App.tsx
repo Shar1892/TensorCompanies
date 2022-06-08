@@ -11,7 +11,7 @@ import Card from '../card/card';
 function App() {
 
   const [companies, setCompanies] = useState<ICompany[]>([]);
-  const [isCardOpen, setIsCardOpen] = useState<boolean>(true);
+  const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
 
   const [selectCompany, setSelectCompany] = useState<ICompany>({
     inn: '',
@@ -31,10 +31,24 @@ function App() {
     })
   }, []);
 
+  const openCard = (inn: string): void => {
+    setIsCardOpen(true);
+    const openedCompany = companies.find((item) => {
+      return item.inn === inn;
+    });
+    if (openedCompany) {
+      setSelectCompany(openedCompany);
+    } 
+  }
+
+  const closeCard = (): void => {
+    setIsCardOpen(false);
+  }
+
   return (
     <div className="App">
-      <CompaniesMain allCompanies={companies} isVisible={isCardOpen}/>
-      <Card isVisible={isCardOpen} companyData={selectCompany}/>
+      <CompaniesMain allCompanies={companies} isVisible={isCardOpen} openCard={openCard}/>
+      <Card isVisible={isCardOpen} companyData={selectCompany} closeCard={closeCard}/>
     </div>
   );
 }
