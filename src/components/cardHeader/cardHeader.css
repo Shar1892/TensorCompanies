@@ -1,0 +1,89 @@
+.card-header {
+	display: grid;
+	grid-template-columns: 1fr 28px;
+	column-gap: 15px;
+	width: 100%;
+	padding: 0;
+	padding-left: 12px;
+	box-sizing: border-box;
+	background-color: #f8f8f8;
+}
+
+.card-header__information {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.card-header__requisites-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0;
+	box-sizing: border-box;
+}
+
+.card-header__region {
+	margin: 0;
+	margin-right: 24px;
+	width: 200px;
+	font-size: var(--text-size-normal);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.card-header__requisit-container {
+	display: flex;
+	align-items: center;
+}
+
+.card-header__requisit-container:first-of-type {
+	margin-right: 5px;
+}
+
+.card-header__requisit-name {
+	margin: 0;
+	margin-right: 13px;
+	font-size: var(--text-size-normal);
+	color: var(--pale-text-color);
+	font-weight: normal;
+}
+
+.card-header__requisit-value {
+	margin: 0;
+	width: 100px;
+	font-size: var(--text-size-large);
+	color: var(--simple-text-color);
+	font-weight: normal;
+}
+
+.card-header__company-name {
+	margin: 5px 0;
+	max-width: 550px;
+	font-size: 20px;
+	color: var(--simple-text-color);
+	font-weight: bold;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.card-header__close-button {
+	width: 28px;
+	height: 28px;
+	background-image: url(../../images/close.svg);
+	background-size: contain;
+	background-position: center;
+	padding: 0;
+	border: 0;
+	border-radius: 11px;
+	background-color: #f8f8f8;
+	outline: 0;
+}
+
+.card-header__close-button:hover {
+	cursor: pointer;
+}

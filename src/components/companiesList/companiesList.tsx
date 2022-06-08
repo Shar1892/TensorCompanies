@@ -4,7 +4,13 @@ import {ICompany} from '../../utils/interfaces';
 
 import CompanyPreview from "../companyPreview/companyPreview";
 
-function CompaniesList({allCompanies}: {allCompanies: ICompany[]}) {
+function CompaniesList({
+  allCompanies,
+  openCard
+}: {
+  allCompanies: ICompany[];
+  openCard: (inn: string) => void
+}) {
   return (
     <main className="companiesList">
       <div className="companiesList__header">
@@ -25,7 +31,7 @@ function CompaniesList({allCompanies}: {allCompanies: ICompany[]}) {
           activity_kind: string;
           kpp: string;
         }, i: any) => (
-          <CompanyPreview companyData={item} key={item.inn}/>
+          <CompanyPreview companyData={item} key={item.inn} openCard={openCard}/>
         ))}
       </>
     </main>
