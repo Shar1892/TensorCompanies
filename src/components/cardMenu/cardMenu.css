@@ -1,0 +1,33 @@
+.card-menu {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 4px;
+	width: 250px;
+	background-color: #f8f8f8;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+.card-menu__item {
+	width: 100%;
+	margin: 0;
+	padding: 5px 12px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.card-menu__item_active {
+	background-color: #edeef2;
+}
+
+.card-menu__item-text {
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--link-text-color);
+	font-weight: normal;
+}
+
+.card-menu__item-text_active {
+	font-weight: bold;
+}

@@ -17,13 +17,15 @@
 .company-preview__description-container {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	max-width: 100%;
 }
 
 .company-preview__row-container {
 	display: flex;
 	align-items: flex-end;
+	max-width: 516px;
 	width: 100%;
+	align-items: baseline;
 }
 
 .company-preview__row-container:first-of-type {
@@ -31,7 +33,6 @@
 }
 
 .company-preview__name {
-	max-width: 70%;
 	margin: 0 10px 0 0;
 	font-size: var(--text-size-large);
 	color: var(--simple-text-color);
@@ -39,6 +40,14 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.company-preview__region {
+	margin: 0;
+	font-size: var(--text-size-very-small);
+	color: var(--light-text-color);
+	font-weight: normal;
+	white-space: nowrap;
 }
 
 .company-preview__description {
@@ -57,9 +66,7 @@
 	font-size: var(--text-size-very-small);
 	color: var(--pale-text-color);
 	font-weight: normal;
-	text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;
 }
 
 .company-preview__requisites-container {
@@ -74,4 +81,22 @@
 	font-size: var(--text-size-normal);
 	color: var(--light-text-color);
 	font-weight: normal;
+}
+
+@media screen and (min-width: 1024px) {
+	.company-preview__row-container {
+		max-width: 567px;
+	}
+}
+
+@media screen and (min-width: 1230px) {
+	.company-preview__row-container {
+		max-width: 732px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.company-preview__row-container {
+		max-width: 892px;
+	}
 }
