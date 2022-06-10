@@ -25,8 +25,21 @@ function Card({
     director_egrul_surname: string;
     director_egrul_name: string;
     director_egrul_patronymic: string;
+    director_position: string;
     activity_kind: string;
     kpp: string;
+    company_full_name: string;
+    main_okved_name: string;
+    okved: string;
+    amount_of_employees: {
+      amount_by_nalogru: number;
+      amount_difference: number;
+      average_salary_by_nalogru: number;
+      average_salary_difference: number;
+    };
+    registration_date: string;
+    taxation_form_name: Array<string>;
+    about_company: string;
   };
   closeCard: () => void
 }) {
@@ -40,18 +53,21 @@ function Card({
         kpp={companyData.kpp}
         name={companyData.company_name}
       />
-
-      <div className="card__main">
+    <div className="card__main">
         <div className="card__content">
-          <AboutCompany />
-          <Owners />
-          <Branches />
-          <Contacts />
-          <Courts />
-          <Pladges />
-          <Inspections />
-          <Vacancies />
-          <Requisites />
+          <AboutCompany
+            fullName={companyData.company_full_name}
+            mainOkved={companyData.main_okved_name}
+            okveds={companyData.okved}
+            directorName={companyData.director_egrul_name}
+            directorSurname={companyData.director_egrul_surname}
+            directorPatronymic={companyData.director_egrul_patronymic}
+            directorPosition={companyData.director_position}
+            amountOfEmployees={companyData.amount_of_employees}
+            registrationDate={companyData.registration_date}
+            taxationForm={companyData.taxation_form_name}
+            aboutCompanyText={companyData.about_company}
+          />
         </div>
         <CardMenu />
       </div>

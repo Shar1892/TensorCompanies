@@ -28,7 +28,7 @@ function CompanyPreview({
       <div className="company-preview__description-container">
         <div className="company-preview__row-container">
           <h2 className="company-preview__name">{companyData.company_name}</h2>
-          <p className="company-preview__description">{companyData.region}</p>
+          <p className="company-preview__region">{companyData.region}</p>
         </div>
         <div className="company-preview__row-container">
           <p className="company-preview__director">{`${companyData.director_egrul_surname} ${companyData.director_egrul_name[0]}. ${companyData.director_egrul_patronymic[0]}.`}</p>

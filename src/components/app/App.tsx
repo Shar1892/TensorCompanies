@@ -20,8 +20,21 @@ function App() {
     director_egrul_surname: '',
     director_egrul_name: '',
     director_egrul_patronymic: '',
+    director_position: '',
     activity_kind: '',
     kpp: '',
+    company_full_name: '',
+    main_okved_name: '',
+    okved: '',
+    amount_of_employees: {
+      amount_by_nalogru: 1,
+      amount_difference: 1,
+      average_salary_by_nalogru: 1,
+      average_salary_difference: 1,
+    },
+    registration_date: '',
+    taxation_form_name: [''],
+    about_company: '',
   })
 
   useEffect(() => {

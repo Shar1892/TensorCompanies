@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr 28px;
 	column-gap: 15px;
-	width: 100%;
+	max-width: 100%;
 	padding: 0;
 	padding-left: 12px;
 	box-sizing: border-box;
@@ -12,13 +12,13 @@
 .card-header__information {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	max-width: 100%;
 }
 
 .card-header__requisites-container {
 	display: flex;
 	align-items: center;
-	width: 100%;
+	max-width: 100%;
 	padding: 10px 0;
 	box-sizing: border-box;
 }
