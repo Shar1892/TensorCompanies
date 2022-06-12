@@ -67,6 +67,7 @@ function Card({
             registrationDate={companyData.registration_date}
             taxationForm={companyData.taxation_form_name}
             aboutCompanyText={companyData.about_company}
+            inn={companyData.inn}
           />
         </div>
         <CardMenu />

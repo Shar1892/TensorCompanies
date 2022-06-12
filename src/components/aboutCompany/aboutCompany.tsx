@@ -1,6 +1,10 @@
+import {useEffect, useState} from 'react';
+
 import './aboutCompany.css';
 
-import {changeRecordOfDifference, changeRecordOfDate} from '../../utils/utils';
+import {changeRecordOfDifference, changeRecordOfDate, getCost, getRevenue} from '../../utils/utils';
+import {IBisinessCost} from '../../utils/interfaces';
+import {getDataBisinessCost} from '../../utils/APICompanies';
 
 function AboutCompany({
   fullName,
@@ -14,6 +18,7 @@ function AboutCompany({
   registrationDate,
   taxationForm,
   aboutCompanyText,
+  inn,
 }: {
   fullName: string;
   mainOkved: string;
@@ -31,9 +36,21 @@ function AboutCompany({
   registrationDate: string;
   taxationForm: Array<string>;
   aboutCompanyText: string;
+  inn: string;
 }) {
 
   const okvedsArr: Array<string> = okveds.split(',');
+
+  const [bisinessCost, setBisinessCost] = useState<IBisinessCost[]>([])
+
+  useEffect(() => {
+    if (inn) {
+      getDataBisinessCost(inn).then((data) => {
+        console.log(data);
+        setBisinessCost(data);
+      });
+    }
+  }, [inn]);
 
   return (
     <section className="about-company">
@@ -74,10 +91,14 @@ function AboutCompany({
           <p className="about-company__link-text about-company__link-text_normal">{taxationForm[0]}</p>
         </div>
       </div>
-      <div className="about-company__financialBlock">
-        <p className="about-company__dedicated-text">Выручка: 500 млн</p>
-        <p className="about-company__dedicated-text">Стоимость: 500 млн</p>
-      </div>
+      {
+        bisinessCost[0] && bisinessCost[0].cost_competitors.length ?
+        <div className="about-company__financialBlock">
+          <p className="about-company__dedicated-text">{`Выручка: ${getRevenue(inn, bisinessCost[0].cost_competitors)}`}</p>
+          <p className="about-company__dedicated-text">{`Стоимость: ${getCost(inn, bisinessCost[0].cost_competitors)}`}</p>
+        </div> :
+        <></>
+      }
       <div className="about-company__about-container">
         <h3 className="about-company__dedicated-text">О компании</h3>
           <div className="about-company__text-container">

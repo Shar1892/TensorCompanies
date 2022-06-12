@@ -21,3 +21,11 @@ export interface ICompany {
   taxation_form_name: Array<string>;
   about_company: string;
 }
+
+export interface IBisinessCost {
+  cost_competitors: {
+    revenue: number;
+    cost: number;
+    inn: string;
+  }[];
+}
