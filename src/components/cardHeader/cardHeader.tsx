@@ -2,12 +2,14 @@ import './cardHeader.css';
 
 function CardHeader({
   closeCard,
+  dropSection,
   inn,
   region,
   kpp,
   name
 }: {
   closeCard: () => void;
+  dropSection: () => void;
   inn: string;
   region: string;
   kpp: string;
@@ -16,6 +18,7 @@ function CardHeader({
 
   const handlecloseCompany = (): void => {
     closeCard();
+    dropSection();
   }
 
   return (

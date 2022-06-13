@@ -1,0 +1,131 @@
+.owners {
+	width: 100%;
+	padding: var(--block-padding);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.owners_close {
+	display: none;
+}
+
+.owners__header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.owners__title {
+	margin: 0;
+	font-size: var(--title-text-size);
+	color: var(--title-text-color);
+	font-weight: bold;
+}
+
+.owners__headers-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.owners__headers-INN {
+	width: 80px;
+	margin: 0;
+	font-size: var(--text-size-very-small);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.owners__headers-cost {
+	width: 75px;
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-very-small);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.owners__headers-share {
+	width: 35px;
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-very-small);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.owners__list {
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.owners__owner-container {
+	width: 100%;
+	margin-bottom: 5px;
+	display: grid;
+	grid-template-columns: 1fr 210px;
+	column-gap: 10px;
+	align-items: baseline;
+}
+
+.owners__owner-discription-container {
+	width: 100%;
+	display: flex;
+	align-items: baseline;
+}
+
+.owners__owner-name {
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.owners__owner-discription {
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-very-small);
+	color: var(--light-text-color);
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.owners__owner-info-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.owners__owner-INN {
+	width: 80px;
+	margin: 0;
+	font-size: var(--text-size-very-small);
+	color: var(--light-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.owners__owner-cost {
+	width: 75px;
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-very-small);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.owners__owner-share {
+	width: 35px;
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-very-small);
+	color: var(--light-text-color);
+	font-weight: normal;
+	text-align: right;
+}

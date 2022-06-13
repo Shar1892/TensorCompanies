@@ -19,6 +19,7 @@ function AboutCompany({
   taxationForm,
   aboutCompanyText,
   inn,
+  currentSection,
 }: {
   fullName: string;
   mainOkved: string;
@@ -37,6 +38,7 @@ function AboutCompany({
   taxationForm: Array<string>;
   aboutCompanyText: string;
   inn: string;
+  currentSection: string;
 }) {
 
   const okvedsArr: Array<string> = okveds.split(',');
@@ -44,16 +46,16 @@ function AboutCompany({
   const [bisinessCost, setBisinessCost] = useState<IBisinessCost[]>([])
 
   useEffect(() => {
-    if (inn) {
+    if (inn && currentSection === 'aboutCompany') {
       getDataBisinessCost(inn).then((data) => {
         console.log(data);
         setBisinessCost(data);
       });
     }
-  }, [inn]);
+  }, [inn, currentSection]);
 
   return (
-    <section className="about-company">
+    <section className={`about-company ${ (currentSection === 'aboutCompany') ? '' : 'about-company_close'}`}>
       <div className="about-company__info-container">
         <div className="about-company__info">
           <div className="about-company__name-container">

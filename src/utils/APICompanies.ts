@@ -1,4 +1,8 @@
-import {ICompany, IBisinessCost} from './interfaces';
+import {
+	ICompany,
+	IBisinessCost,
+	IOwner,
+} from './interfaces';
 
 
 export const BASE_URL = 'http://localhost:4000';
@@ -20,9 +24,20 @@ export const getCompniesList = (): Promise<ICompany[]> => {
 		});
 }
 
-//export const getBisinessCost = (inn: string): Promise<{}> => {
 export const getDataBisinessCost = (inn: string): Promise<IBisinessCost[]> => {
 	return fetch(`${BASE_URL}/business/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getCompaniesOwners = (inn: string): Promise<IOwner[][]> => {
+	return fetch(`${BASE_URL}/owners/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})

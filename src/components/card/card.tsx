@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react';
+
 import CardHeader from "../cardHeader/cardHeader";
 import AboutCompany from "../aboutCompany/aboutCompany";
 import Owners from "../owners/owners";
@@ -44,10 +46,28 @@ function Card({
   closeCard: () => void
 }) {
 
+  const [currentSection, setCurrentSection] = useState<string>('');
+
+  useEffect(() => {
+    if (companyData.inn) {
+      setCurrentSection('aboutCompany');
+    }
+  }, [companyData.inn]);
+
+  const handleSetSection = (nameSection: string): void => {
+    console.log(nameSection);
+    setCurrentSection(nameSection);
+  }
+
+  const setStartSection = (): void => {
+    setCurrentSection('aboutCompany');
+  }
+
   return (
     <div className={`card ${isVisible ? '' : 'card_close'}`}>
       <CardHeader 
         closeCard={closeCard}
+        dropSection={setStartSection}
         inn={companyData.inn}
         region={companyData.region}
         kpp={companyData.kpp}
@@ -68,9 +88,14 @@ function Card({
             taxationForm={companyData.taxation_form_name}
             aboutCompanyText={companyData.about_company}
             inn={companyData.inn}
+            currentSection={currentSection}
+          />
+          <Owners 
+            currentSection={currentSection}
+            inn={companyData.inn}
           />
         </div>
-        <CardMenu />
+        <CardMenu handleSetSection={handleSetSection}/>
       </div>
     </div>
   );
