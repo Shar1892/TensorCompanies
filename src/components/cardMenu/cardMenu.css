@@ -17,6 +17,10 @@
 	box-sizing: border-box;
 }
 
+.card-menu__item:hover {
+	cursor: pointer;
+}
+
 .card-menu__item_active {
 	background-color: #edeef2;
 }

@@ -20,7 +20,7 @@ function CompaniesList({
           <p className="companiesList__requisites-title">КПП</p>
         </div>
       </div>
-      <>
+      
         {allCompanies.map((item: {
           inn: string;
           company_name: string;
@@ -30,10 +30,10 @@ function CompaniesList({
           director_egrul_patronymic: string;
           activity_kind: string;
           kpp: string;
-        }, i: any) => (
+        }) => (
           <CompanyPreview companyData={item} key={item.inn} openCard={openCard}/>
         ))}
-      </>
+      
     </main>
   );
 }

@@ -29,3 +29,12 @@ export interface IBisinessCost {
     inn: string;
   }[];
 }
+
+export interface IOwner {
+  face_name: string;
+  region: string;
+  date_begin: string;
+  inn: string;
+  cost: number;
+  share: number;
+}
