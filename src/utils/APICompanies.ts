@@ -2,15 +2,11 @@ import {
 	ICompany,
 	IBisinessCost,
 	IOwner,
+	IBranch,
 } from './interfaces';
 
 
 export const BASE_URL = 'http://localhost:4000';
-
-/*export interface IResponce {
-  status: boolean;
-  data: any;
-}*/
 
 export const getCompniesList = (): Promise<ICompany[]> => {
 	return fetch(`${BASE_URL}/req`, {
@@ -38,6 +34,18 @@ export const getDataBisinessCost = (inn: string): Promise<IBisinessCost[]> => {
 
 export const getCompaniesOwners = (inn: string): Promise<IOwner[][]> => {
 	return fetch(`${BASE_URL}/owners/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getBranches = (inn: string): Promise<IBranch[][]> => {
+	return fetch(`${BASE_URL}/branches/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})

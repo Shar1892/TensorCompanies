@@ -38,3 +38,12 @@ export interface IOwner {
   cost: number;
   share: number;
 }
+
+export interface IBranch {
+  kpp: string;
+  branch_name: string;
+  address: string;
+  state_code: number;
+  branch_code: string;
+  state_name: string;
+}
