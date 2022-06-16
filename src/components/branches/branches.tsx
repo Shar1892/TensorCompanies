@@ -34,6 +34,10 @@ function Branches(
     }
   }, [inn, currentSection]);
 
+  const showMoreBranches = (): void => {
+    console.log('boom');
+  }
+
   return (
     <section className={`branches ${(currentSection === 'branches') ? '' : 'branches_close'}`}>
             <h2 className="branches__title">ФИЛИАЛЫ</h2>
@@ -48,7 +52,7 @@ function Branches(
               </div>
               ))}
             </div>
-            <button className="branches__more-button">Ещё</button>
+            <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
           </section>
   );
 }
