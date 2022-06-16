@@ -3,6 +3,8 @@ import {useEffect, useState} from 'react';
 import {getBranches} from '../../utils/APICompanies';
 import { IBranch } from '../../utils/interfaces';
 
+import NoData from '../noData/noData';
+
 import './branches.css';
 
 function Branches(
@@ -27,7 +29,7 @@ function Branches(
         setAllBranches(data[0]);
         const startBranches: IBranch[] = data[0].filter((branch, index) => {
           return index < 10;
-        })
+        });
         console.log(startBranches);
         setDisplayedBranches(startBranches);
       });
@@ -35,24 +37,33 @@ function Branches(
   }, [inn, currentSection]);
 
   const showMoreBranches = (): void => {
-    console.log('boom');
+    const newDisplayedBranches: IBranch[] = allBranches.filter((branch, index) => {
+      return index < displayedBranches.length + 10;
+    });
+    setDisplayedBranches(newDisplayedBranches);
   }
 
   return (
     <section className={`branches ${(currentSection === 'branches') ? '' : 'branches_close'}`}>
             <h2 className="branches__title">ФИЛИАЛЫ</h2>
-            <div className="branches__list">
-              {displayedBranches.map((branch: IBranch, i: number) => (
-                <div className="branches__branch" key={i}>
-                <div className="branches__info-container">
-                  <h3 className="branches__branch-name">{branch.branch_name}</h3>
-                  <p className="branches__branch-address">{branch.address}</p>
+            {
+              allBranches.length ?
+              <>
+                <div className="branches__list">
+                  {displayedBranches.map((branch: IBranch, i: number) => (
+                    <div className="branches__branch" key={i}>
+                    <div className="branches__info-container">
+                      <h3 className="branches__branch-name">{branch.branch_name}</h3>
+                      <p className="branches__branch-address">{branch.address}</p>
+                    </div>
+                    <p className="branches__branch-KPP">{branch.kpp}</p>
+                  </div>
+                  ))}
                 </div>
-                <p className="branches__branch-KPP">{branch.kpp}</p>
-              </div>
-              ))}
-            </div>
-            <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
+                <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
+              </> :
+              <NoData />
+            }
           </section>
   );
 }
