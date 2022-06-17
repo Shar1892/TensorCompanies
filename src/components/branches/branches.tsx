@@ -25,7 +25,7 @@ function Branches(
   //const [countdisplayedBranches, setCountdisplayedBranches] = useState<number>(0);
 
   useEffect(() => {
-    if (inn && currentSection === 'branches') {
+    if (currentSection === 'branches') {
       getBranches(inn).then((data) => {
         console.log(data);
         setAllBranches(data[0]);
