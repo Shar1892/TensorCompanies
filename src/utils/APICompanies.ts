@@ -3,6 +3,7 @@ import {
 	IBisinessCost,
 	IOwner,
 	IBranch,
+	IContacts,
 } from './interfaces';
 
 
@@ -46,6 +47,18 @@ export const getCompaniesOwners = (inn: string): Promise<IOwner[][]> => {
 
 export const getBranches = (inn: string): Promise<IBranch[][]> => {
 	return fetch(`${BASE_URL}/branches/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getContacts = (inn: string): Promise<IContacts[]> => {
+	return fetch(`${BASE_URL}/contacts/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})
