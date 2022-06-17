@@ -21,7 +21,7 @@ function Owners(
   const [ownersList, setOwnersList] = useState<IOwner[]>([]);
 
   useEffect(() => {
-    if (inn && currentSection === 'owners') {
+    if (currentSection === 'owners') {
       getCompaniesOwners(inn).then((data) => {
         console.log(data);
         
