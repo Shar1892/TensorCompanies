@@ -47,3 +47,9 @@ export interface IBranch {
   branch_code: string;
   state_name: string;
 }
+
+export interface IContacts {
+  phone_numbers: string[];
+  sites: string[];
+  emails: string[];
+}

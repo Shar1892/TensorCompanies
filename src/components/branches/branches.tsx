@@ -22,6 +22,8 @@ function Branches(
 
   const [displayedBranches, setDisplayedBranches] = useState<IBranch[]>([]);
 
+  //const [countdisplayedBranches, setCountdisplayedBranches] = useState<number>(0);
+
   useEffect(() => {
     if (inn && currentSection === 'branches') {
       getBranches(inn).then((data) => {
@@ -60,7 +62,10 @@ function Branches(
                   </div>
                   ))}
                 </div>
-                <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
+                {
+                  (allBranches.length > displayedBranches.length) &&
+                  <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
+                }
               </> :
               <NoData />
             }
