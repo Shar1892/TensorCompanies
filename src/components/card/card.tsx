@@ -102,6 +102,10 @@ function Card({
             currentSection={currentSection}
             inn={companyData.inn}
           />
+          <Courts
+            currentSection={currentSection}
+            inn={companyData.inn}
+          />
         </div>
         <CardMenu handleSetSection={handleSetSection}/>
       </div>

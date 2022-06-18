@@ -53,3 +53,11 @@ export interface IContacts {
   sites: string[];
   emails: string[];
 }
+
+export interface ICourt {
+  date: string;
+  list_of_plaintiffs: string[];
+  list_of_defendants: string[];
+  category: string;
+  number_case: string;
+}

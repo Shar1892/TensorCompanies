@@ -1,0 +1,140 @@
+.courts {
+	width: 100%;
+	padding: var(--block-padding);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts_close {
+	display: none;
+}
+
+.courts__courts {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.courts__title {
+	margin: 0;
+	font-size: var(--title-text-size);
+	color: var(--title-text-color);
+	font-weight: bold;
+}
+
+.courts__courts-list {
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts__court-container {
+	width: 100%;
+	margin-bottom: 5px;
+	display: grid;
+	grid-template-columns: 60px 1fr 110px;
+	align-items: baseline;
+}
+
+.courts__item-date {
+	margin: 0;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+}
+
+.courts__court-info-container {
+	width: 100%;
+	margin: 0 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts__court-competitor {
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--link-text-color);
+	font-weight: bold;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.courts__court-category {
+	margin: 0;
+	font-size: var(--text-size-normal);
+	color: var(--light-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.courts__court-number {
+	margin: 0;
+	font-size: var(--text-size-normal);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	text-align: right;
+}
+
+.courts__more-button {
+	margin-top: 5px;
+	font-size: var(--text-size-large);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	background-color: #ffffff;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	align-self: flex-start;
+}
+
+.courts__more-button:hover {
+	cursor: pointer;
+	color: var(--link-text-color);
+}
+
+.courts__executive {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts__executive-list {
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts__executive-container {
+	width: 100%;
+	margin-bottom: 5px;
+	display: grid;
+	grid-template-columns: 60px 1fr;
+}
+
+.courts__executive-info-container {
+	width: 100%;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.courts__executive-info {
+	margin: 0 0 3px 0;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.courts__executive-info:last-of-type {
+	margin-bottom: 0;
+}
