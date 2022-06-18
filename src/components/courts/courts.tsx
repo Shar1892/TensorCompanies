@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import './courts.css';
 
-import { getCourts } from '../../utils/APICompanies';
+import { getCourts, getExecutive } from '../../utils/APICompanies';
 
 function Courts(
   {
@@ -17,10 +17,21 @@ function Courts(
 
   useEffect(() => {
     if (currentSection === 'courts') {
-      getCourts(inn).then((data) => {
+
+      Promise.all([getCourts(inn), getExecutive(inn)])
+        .then(([courtsData, executiveData]) => {
+          console.log(courtsData);
+          console.log(executiveData);
+        })
+
+      /*getCourts(inn).then((data) => {
         console.log(data);
         
       });
+      getExecutive(inn).then((data) => {
+        console.log(data);
+        
+      });*/
     }
   }, [inn, currentSection]);
 

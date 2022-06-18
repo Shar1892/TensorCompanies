@@ -5,6 +5,7 @@ import {
 	IBranch,
 	IContacts,
 	ICourt,
+	iExecutive,
 } from './interfaces';
 
 
@@ -70,8 +71,20 @@ export const getContacts = (inn: string): Promise<IContacts[]> => {
 		});
 }
 
-export const getCourts = (inn: string): Promise<IContacts[][]> => {
+export const getCourts = (inn: string): Promise<ICourt[][]> => {
 	return fetch(`${BASE_URL}/courts/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getExecutive = (inn: string): Promise<iExecutive[][]> => {
+	return fetch(`${BASE_URL}/executive/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})

@@ -60,4 +60,12 @@ export interface ICourt {
   list_of_defendants: string[];
   category: string;
   number_case: string;
+  case_name: string;
+}
+
+export interface iExecutive {
+  date: string;
+  case_name: string;
+  status: string;
+  cost: number;
 }
