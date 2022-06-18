@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-import {getBranches} from '../../utils/APICompanies';
+import { getBranches } from '../../utils/APICompanies';
 import { IBranch } from '../../utils/interfaces';
 
 import NoData from '../noData/noData';
@@ -21,8 +21,6 @@ function Branches(
   const [allBranches, setAllBranches] = useState<IBranch[]>([]);
 
   const [displayedBranches, setDisplayedBranches] = useState<IBranch[]>([]);
-
-  //const [countdisplayedBranches, setCountdisplayedBranches] = useState<number>(0);
 
   useEffect(() => {
     if (currentSection === 'branches') {
@@ -47,29 +45,29 @@ function Branches(
 
   return (
     <section className={`branches ${(currentSection === 'branches') ? '' : 'branches_close'}`}>
-            <h2 className="branches__title">ФИЛИАЛЫ</h2>
-            {
-              allBranches.length ?
-              <>
-                <div className="branches__list">
-                  {displayedBranches.map((branch: IBranch, i: number) => (
-                    <div className="branches__branch" key={i}>
-                    <div className="branches__info-container">
-                      <h3 className="branches__branch-name">{branch.branch_name}</h3>
-                      <p className="branches__branch-address">{branch.address}</p>
-                    </div>
-                    <p className="branches__branch-KPP">{branch.kpp}</p>
-                  </div>
-                  ))}
-                </div>
-                {
-                  (allBranches.length > displayedBranches.length) &&
-                  <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
-                }
-              </> :
-              <NoData />
-            }
-          </section>
+      <h2 className="branches__title">ФИЛИАЛЫ</h2>
+      {
+        allBranches.length ?
+        <>
+          <div className="branches__list">
+            {displayedBranches.map((branch: IBranch, i: number) => (
+              <div className="branches__branch" key={i}>
+              <div className="branches__info-container">
+                <h3 className="branches__branch-name">{branch.branch_name}</h3>
+                <p className="branches__branch-address">{branch.address}</p>
+              </div>
+              <p className="branches__branch-KPP">{branch.kpp}</p>
+            </div>
+            ))}
+          </div>
+          {
+            (allBranches.length > displayedBranches.length) &&
+            <button className="branches__more-button" onClick={showMoreBranches}>Ещё</button>
+          }
+        </> :
+        <NoData />
+      }
+    </section>
   );
 }
 

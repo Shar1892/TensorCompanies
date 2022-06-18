@@ -4,6 +4,7 @@ import {
 	IOwner,
 	IBranch,
 	IContacts,
+	ICourt,
 } from './interfaces';
 
 
@@ -59,6 +60,18 @@ export const getBranches = (inn: string): Promise<IBranch[][]> => {
 
 export const getContacts = (inn: string): Promise<IContacts[]> => {
 	return fetch(`${BASE_URL}/contacts/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getCourts = (inn: string): Promise<IContacts[][]> => {
+	return fetch(`${BASE_URL}/courts/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})
