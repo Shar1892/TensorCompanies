@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 
 import { getBranches } from '../../utils/APICompanies';
 import { IBranch } from '../../utils/interfaces';
+import { filtrArrToLenghth } from '../../utils/utils';
 
 import NoData from '../noData/noData';
 
@@ -27,20 +28,13 @@ function Branches(
       getBranches(inn).then((data) => {
         console.log(data);
         setAllBranches(data[0]);
-        const startBranches: IBranch[] = data[0].filter((branch, index) => {
-          return index < 10;
-        });
-        console.log(startBranches);
-        setDisplayedBranches(startBranches);
+        setDisplayedBranches(filtrArrToLenghth(allBranches, 10));
       });
     }
   }, [inn, currentSection]);
 
   const showMoreBranches = (): void => {
-    const newDisplayedBranches: IBranch[] = allBranches.filter((branch, index) => {
-      return index < displayedBranches.length + 10;
-    });
-    setDisplayedBranches(newDisplayedBranches);
+    setDisplayedBranches(filtrArrToLenghth(allBranches, (displayedBranches.length + 10)));
   }
 
   return (

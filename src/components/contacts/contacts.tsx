@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import { getContacts } from '../../utils/APICompanies';
+import { filtrArrToLenghth } from '../../utils/utils';
 import NoData from '../noData/noData';
 
 import './contacts.css';
@@ -23,13 +24,6 @@ function Contacts(
   const [displayedPhones, setDisplayedPhones] = useState<string[]>([]);
   const [displayedSites, setDisplayedSites] = useState<string[]>([]);
   const [displayedEmails, setDisplayedEmails] = useState<string[]>([]);
-
-  const filtrArrToLenghth = (arr: string[], length: number): string[] => {
-    const resultArr: string[] = arr.filter((item, index) => {
-      return index < length;
-    })
-    return resultArr;
-  }
 
   useEffect(() => {
     if (currentSection === 'contacts') {

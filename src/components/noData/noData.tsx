@@ -1,6 +1,6 @@
 import './noData.css';
 
-function noData() {
+function NoData() {
 
   return (
     <div className='noData'>
@@ -9,4 +9,4 @@ function noData() {
   );
 }
 
-export default noData;
+export default NoData;
