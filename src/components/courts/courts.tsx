@@ -53,6 +53,10 @@ function Courts(
     setDisplayedCourts(filtrArrToLenghth(allCourts, (displayedCourts.length + 5)));
   }
 
+  const showMoreExecutive = (): void => {
+    setDisplayedExecutives(filtrArrToLenghth(allExecutives, (displayedExecutives.length + 5)));
+  }
+
   return (
     <section className={`courts ${(currentSection === 'courts') ? '' : 'courts_close'}`}>
       <div className="courts__courts">
@@ -82,16 +86,27 @@ function Courts(
       </div>
       <div className="courts__executive">
         <h2 className="courts__title">ИСПОЛНИТЕЛЬНЫЕ ДОКУМЕНТЫ</h2>
-        <div className="courts__executive-list">
-          <div className="courts__executive-container">
-            <p className="courts__item-date">11.03.22</p>
-            <div className="courts__executive-info-container">
-              <p className="courts__executive-info">Акт по делу об административном правонарушении</p>
-              <p className="courts__executive-info">Штраф ГИБДД: 2000 ₽</p>
+        {
+          allExecutives.length ?
+          <>
+            <div className="courts__executive-list">
+              {displayedExecutives.map((executive: iExecutive, i: number) => (
+                <div className="courts__executive-container" key={i}>
+                  <p className="courts__item-date">{changeRecordOfDate(executive.date)}</p>
+                  <div className="courts__executive-info-container">
+                    <p className="courts__executive-info">{executive.case_name}</p>
+                    <p className="courts__executive-info">{`${executive.status}: ${executive.cost} ₽`}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          </div>
-        <button className="courts__more-button">Ещё</button>
+            {
+              (allExecutives.length > displayedExecutives.length) &&
+              <button className="courts__more-button" onClick={showMoreExecutive}>Ещё</button>
+            }
+          </> :
+          <NoData />
+        }
       </div>
     </section>
   );
