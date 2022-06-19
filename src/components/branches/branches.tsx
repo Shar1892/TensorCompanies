@@ -28,7 +28,7 @@ function Branches(
       getBranches(inn).then((data) => {
         console.log(data);
         setAllBranches(data[0]);
-        setDisplayedBranches(filtrArrToLenghth(allBranches, 10));
+        setDisplayedBranches(filtrArrToLenghth(data[0], 10));
       });
     }
   }, [inn, currentSection]);

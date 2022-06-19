@@ -82,6 +82,7 @@
 
 .owners__owner-name {
 	margin: 0;
+	max-width: 230px;
 	font-size: var(--text-size-large);
 	color: var(--simple-text-color);
 	font-weight: normal;
@@ -128,4 +129,16 @@
 	color: var(--light-text-color);
 	font-weight: normal;
 	text-align: right;
+}
+
+@media screen and (min-width: 1230px) {
+	.owners__owner-name {
+		max-width: 370px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.owners__owner-name {
+		max-width: 530px;
+	}
 }
