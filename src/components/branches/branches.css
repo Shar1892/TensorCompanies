@@ -41,6 +41,7 @@
 
 .branches__branch-name {
 	margin: 0 0 5px 0;
+	max-width: 424px;
 	font-size: var(--text-size-large);
 	color: var(--simple-text-color);
 	font-weight: normal;
@@ -51,6 +52,7 @@
 
 .branches__branch-address {
 	margin: 0;
+	max-width: 424px;
 	font-size: var(--text-size-very-small);
 	color: var(--pale-text-color);
 	font-weight: normal;
@@ -81,4 +83,34 @@
 .branches__more-button:hover {
 	cursor: pointer;
 	color: var(--link-text-color);
+}
+
+@media screen and (min-width: 1024px) {
+	.branches__branch-name {
+		max-width: 475px;
+	}
+
+	.branches__branch-address {
+		max-width: 475px;
+	}
+}
+
+@media screen and (min-width: 1230px) {
+	.branches__branch-name {
+		max-width: 640px;
+	}
+
+	.branches__branch-address {
+		max-width: 640px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.branches__branch-name {
+		max-width: 800px;
+	}
+
+	.branches__branch-address {
+		max-width: 800px;
+	}
 }

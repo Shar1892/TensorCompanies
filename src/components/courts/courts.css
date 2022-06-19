@@ -55,6 +55,7 @@
 
 .courts__court-competitor {
 	margin: 0;
+	max-width: 360px;
 	font-size: var(--text-size-large);
 	color: var(--link-text-color);
 	font-weight: bold;
@@ -65,6 +66,7 @@
 
 .courts__court-category {
 	margin: 0;
+	max-width: 360px;
 	font-size: var(--text-size-normal);
 	color: var(--light-text-color);
 	font-weight: normal;
@@ -125,8 +127,15 @@
 	flex-direction: column;
 }
 
+.courts__executive-status-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
 .courts__executive-info {
-	margin: 0 0 3px 0;
+	margin: 0;
+	max-width: 480px;
 	font-size: var(--text-size-normal);
 	color: var(--simple-text-color);
 	font-weight: normal;
@@ -135,6 +144,56 @@
 	overflow: hidden;
 }
 
-.courts__executive-info:last-of-type {
-	margin-bottom: 0;
+.courts__executive-status {
+	margin: 0 3px 0 0;
+	max-width: 430px;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.courts__executive-cost {
+	margin: 0;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+}
+
+@media screen and (min-width: 1230px) {
+	.courts__court-competitor {
+		max-width: 530px;
+	}
+
+	.courts__court-category {
+		max-width: 530px;
+	}
+
+	.courts__executive-info {
+		max-width: 640px;
+	}
+
+	.courts__executive-status {
+		max-width: 590px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.courts__court-competitor {
+		max-width: 690px;
+	}
+
+	.courts__court-category {
+		max-width: 690px;
+	}
+
+	.courts__executive-info {
+		max-width: 800px;
+	}
+
+	.courts__executive-status {
+		max-width: 750px;
+	}
 }

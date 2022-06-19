@@ -95,7 +95,10 @@ function Courts(
                   <p className="courts__item-date">{changeRecordOfDate(executive.date)}</p>
                   <div className="courts__executive-info-container">
                     <p className="courts__executive-info">{executive.case_name}</p>
-                    <p className="courts__executive-info">{`${executive.status}: ${executive.cost} ₽`}</p>
+                    <div className='courts__executive-status-container'>
+                    <p className="courts__executive-status">{`${executive.status}:`}</p>
+                    <p className="courts__executive-cost">{`${executive.cost} ₽`}</p>
+                    </div>
                   </div>
                 </div>
               ))}
