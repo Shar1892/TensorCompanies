@@ -57,3 +57,11 @@ const formatSum = (sum: number): string => {
     return `${Math.floor(sum / 1000000000000)} трлн.`
   }
 }
+
+// Полуучаю обрезанный массив до заданной длины
+export const filtrArrToLenghth = (arr: any[], length: number): any[] => {
+  const resultArr: any[] = arr.filter((item, index) => {
+    return index < length;
+  })
+  return resultArr;
+}
