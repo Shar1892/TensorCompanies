@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import './courts.css';
 
 import { getCourts, getExecutive } from '../../utils/APICompanies';
-import { ICourt, iExecutive } from '../../utils/interfaces';
+import { ICourt, IExecutive } from '../../utils/interfaces';
 import { filtrArrToLenghth, changeRecordOfDate } from '../../utils/utils';
 
 import NoData from '../noData/noData';
@@ -20,10 +20,10 @@ function Courts(
 ) {
 
   const [allCourts, setAllCourts] = useState<ICourt[]>([]);
-  const [allExecutives, setAllExecutives] = useState<iExecutive[]>([]);
+  const [allExecutives, setAllExecutives] = useState<IExecutive[]>([]);
 
   const [displayedCourts, setDisplayedCourts] = useState<ICourt[]>([]);
-  const [displayedExecutives, setDisplayedExecutives] = useState<iExecutive[]>([]);
+  const [displayedExecutives, setDisplayedExecutives] = useState<IExecutive[]>([]);
 
   useEffect(() => {
     if (currentSection === 'courts') {
@@ -90,7 +90,7 @@ function Courts(
           allExecutives.length ?
           <>
             <div className="courts__executive-list">
-              {displayedExecutives.map((executive: iExecutive, i: number) => (
+              {displayedExecutives.map((executive: IExecutive, i: number) => (
                 <div className="courts__executive-container" key={i}>
                   <p className="courts__item-date">{changeRecordOfDate(executive.date)}</p>
                   <div className="courts__executive-info-container">
