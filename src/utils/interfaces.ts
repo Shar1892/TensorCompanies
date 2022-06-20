@@ -63,9 +63,20 @@ export interface ICourt {
   case_name: string;
 }
 
-export interface iExecutive {
+export interface IExecutive {
   date: string;
   case_name: string;
   status: string;
   cost: number;
+}
+export interface IPledge {
+  agreement: {
+    publish_date:string
+  };
+  category: string[];
+  lessee_name: string;
+  objects: {
+    description: string;
+  }[];
+  type: string;
 }

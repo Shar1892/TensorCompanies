@@ -106,6 +106,10 @@ function Card({
             currentSection={currentSection}
             inn={companyData.inn}
           />
+          <Pladges
+            currentSection={currentSection}
+            inn={companyData.inn}
+          />
         </div>
         <CardMenu handleSetSection={handleSetSection}/>
       </div>
