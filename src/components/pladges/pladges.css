@@ -50,6 +50,7 @@
 
 .pladges__pladge-category {
 	margin: 0;
+	max-width: 350px;
 	font-size: var(--text-size-normal);
 	color: var(--light-text-color);
 	font-weight: normal;
@@ -60,6 +61,7 @@
 
 .pladges__pladge-pladgee {
 	margin: 2px 0;
+	max-width: 350px;
 	font-size: var(--text-size-large);
 	color: var(--link-text-color);
 	font-weight: normal;
@@ -70,6 +72,7 @@
 
 .pladges__pladge-discription {
 	margin: 0;
+	max-width: 350px;
 	font-size: var(--text-size-normal);
 	color: var(--simple-text-color);
 	font-weight: normal;
@@ -102,4 +105,46 @@
 .pladges__more-button:hover {
 	cursor: pointer;
 	color: var(--link-text-color);
+}
+
+@media screen and (min-width: 1024px) {
+	.pladges__pladge-category {
+		max-width: 400px;
+	}
+
+	.pladges__pladge-pladgee {
+		max-width: 400px;
+	}
+
+	.pladges__pladge-discription {
+		max-width: 400px;
+	}
+}
+
+@media screen and (min-width: 1230px) {
+	.pladges__pladge-category {
+		max-width: 570px;
+	}
+
+	.pladges__pladge-pladgee {
+		max-width: 570px;
+	}
+
+	.pladges__pladge-discription {
+		max-width: 570px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.pladges__pladge-category {
+		max-width: 735px;
+	}
+
+	.pladges__pladge-pladgee {
+		max-width: 735px;
+	}
+
+	.pladges__pladge-discription {
+		max-width: 735px;
+	}
 }

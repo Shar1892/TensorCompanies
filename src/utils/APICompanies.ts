@@ -97,7 +97,7 @@ export const getExecutive = (inn: string): Promise<IExecutive[][]> => {
 }
 
 export const getPledges = (inn: string): Promise<IPledge[][]> => {
-	return fetch(`${BASE_URL}/executive/${inn}`, {
+	return fetch(`${BASE_URL}/pledges/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})
