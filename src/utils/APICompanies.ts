@@ -7,6 +7,7 @@ import {
 	ICourt,
 	IExecutive,
 	IPledge,
+	IInspection,
 } from './interfaces';
 
 
@@ -98,6 +99,18 @@ export const getExecutive = (inn: string): Promise<IExecutive[][]> => {
 
 export const getPledges = (inn: string): Promise<IPledge[][]> => {
 	return fetch(`${BASE_URL}/pledges/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getInspections = (inn: string): Promise<IInspection[][]> => {
+	return fetch(`${BASE_URL}/inspections/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})
