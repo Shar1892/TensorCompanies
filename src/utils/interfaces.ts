@@ -80,3 +80,9 @@ export interface IPledge {
   }[];
   type: string;
 }
+
+export interface IInspection {
+  date_check: string;
+  inspection_body_main: string;
+  inspection_objective: string;
+}

@@ -68,11 +68,3 @@ function Pladges(
 }
 
 export default Pladges;
-
-/*
-
-<p className="pladges__pladge-date">{changeRecordOfDate(pledge.agreement.publish_date)}</p>
-
-<p className="pladges__pladge-discription">{pledge.objects[0].description}</p>
-
-*/
