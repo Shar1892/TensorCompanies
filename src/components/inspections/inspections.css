@@ -48,6 +48,7 @@
 
 .inspections__inspection-name {
 	margin: 0;
+	max-width: 430px;
 	font-size: var(--text-size-normal);
 	color: var(--simple-text-color);
 	font-weight: normal;
@@ -58,10 +59,53 @@
 
 .inspections__inspection-objective {
 	margin: 0;
+	max-width: 430px;
 	font-size: var(--text-size-normal);
 	color: var(--light-text-color);
 	font-weight: normal;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.inspections__more-button {
+	margin-top: 5px;
+	font-size: var(--text-size-large);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	background-color: #ffffff;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	align-self: flex-start;
+}
+
+@media screen and (min-width: 1024px) {
+	.inspections__inspection-name {
+		max-width: 480px;
+	}
+
+	.inspections__inspection-objective {
+		max-width: 480px;
+	}
+}
+
+@media screen and (min-width: 1230px) {
+	.inspections__inspection-name {
+		max-width: 650px;
+	}
+
+	.inspections__inspection-objective {
+		max-width: 650px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.inspections__inspection-name {
+		max-width: 810px;
+	}
+
+	.inspections__inspection-objective {
+		max-width: 810px;
+	}
 }

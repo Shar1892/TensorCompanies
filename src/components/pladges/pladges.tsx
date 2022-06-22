@@ -62,7 +62,6 @@ function Pladges(
         </> :
         <NoData />
       }
-      
     </section>
   );
 }
