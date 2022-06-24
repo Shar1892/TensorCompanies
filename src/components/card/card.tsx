@@ -114,6 +114,10 @@ function Card({
             currentSection={currentSection}
             inn={companyData.inn}
           />
+          <Vacancies
+            currentSection={currentSection}
+            inn={companyData.inn}
+          />
         </div>
         <CardMenu handleSetSection={handleSetSection}/>
       </div>

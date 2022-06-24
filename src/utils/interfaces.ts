@@ -86,3 +86,13 @@ export interface IInspection {
   inspection_body_main: string;
   inspection_objective: string;
 }
+
+export interface IVacancy {
+  id: string;
+  title: string;
+  description: string;
+  salary_from: number;
+  salary_to: number;
+  sources_name: string[];
+  kladr_data: string[];
+}
