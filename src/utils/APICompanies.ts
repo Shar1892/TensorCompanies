@@ -8,6 +8,7 @@ import {
 	IExecutive,
 	IPledge,
 	IInspection,
+	IVacancy,
 } from './interfaces';
 
 
@@ -111,6 +112,18 @@ export const getPledges = (inn: string): Promise<IPledge[][]> => {
 
 export const getInspections = (inn: string): Promise<IInspection[][]> => {
 	return fetch(`${BASE_URL}/inspections/${inn}`, {
+		mode: 'cors',	
+		method: 'GET',
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+		});
+}
+
+export const getVacancies = (inn: string): Promise<IVacancy[][]> => {
+	return fetch(`${BASE_URL}/vacancies/${inn}`, {
 		mode: 'cors',	
 		method: 'GET',
 	})
