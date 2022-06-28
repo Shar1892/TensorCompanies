@@ -25,6 +25,7 @@ function App() {
     kpp: '',
     company_full_name: '',
     main_okved_name: '',
+    main_okved: '',
     okved: '',
     amount_of_employees: {
       amount_by_nalogru: 1,
@@ -35,6 +36,11 @@ function App() {
     registration_date: '',
     taxation_form_name: [''],
     about_company: '',
+    ogrn: '',
+    reg_number_pf: '',
+    okpo: '',
+    reg_number_fss: '',
+    oktmo: '',
   })
 
   useEffect(() => {

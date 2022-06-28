@@ -1,0 +1,142 @@
+.requisites {
+	width: 100%;
+	padding: var(--block-padding);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.requisites_close {
+	display: none;
+}
+
+.requisites__title {
+	margin: 0;
+	font-size: var(--title-text-size);
+	color: var(--title-text-color);
+	font-weight: bold;
+}
+
+.requisites__name-container {
+	display: flex;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.requisites__name {
+	margin: 0 0 0 10px;
+	max-width: 370px;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.requisites__subtitle {
+	margin: 0;
+	width: 110px;
+	font-size: var(--text-size-normal);
+	color: var(--pale-text-color);
+	font-weight: normal;
+}
+
+.requisites__requisites-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 10px;
+}
+
+.requisites__requisite-container {
+	display: grid;
+	grid-template-columns: 110px 1fr;
+	column-gap: 10px;
+}
+
+.requisites__requisit {
+	margin: 0;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.requisites__okved-container {
+	display: flex;
+	width: 100%;
+	margin: 10px 0;
+	align-items: baseline;
+}
+
+.requisites__okved {
+	margin: 0 0 0 10px;
+	max-width: 300px;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.requisites__link {
+	margin: 0 0 0 10px;
+	width: 60px;
+	font-size: var(--text-size-very-small);
+	color: var(--pale-text-color);
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+.requisites__registration-container {
+	display: flex;
+	width: 100%;
+	align-items: baseline;
+}
+
+.requisites__registration-subtitle {
+	margin: 0;
+	font-size: var(--text-size-large);
+	color: var(--link-text-color);
+	font-weight: bold;
+}
+
+.requisites__registration-date {
+	margin: 0 0 0 10px;
+	font-size: var(--text-size-normal);
+	color: var(--simple-text-color);
+	font-weight: normal;
+}
+
+@media screen and (min-width: 1024px) {
+	.requisites__name {
+		max-width: 460px;
+	}
+
+	.requisites__okved {
+		max-width: 400px;
+	}
+}
+
+@media screen and (min-width: 1230px) {
+	.requisites__name {
+		max-width: 600px;
+	}
+
+	.requisites__okved {
+		max-width: 540px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.requisites__name {
+		max-width: 760px;
+	}
+
+	.requisites__okved {
+		max-width: 700px;
+	}
+}
