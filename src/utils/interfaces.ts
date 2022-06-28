@@ -10,6 +10,7 @@ export interface ICompany {
   kpp: string;
   company_full_name: string;
   main_okved_name: string;
+  main_okved: string;
   okved: string;
   amount_of_employees: {
     amount_by_nalogru: number;
@@ -20,6 +21,11 @@ export interface ICompany {
   registration_date: string;
   taxation_form_name: Array<string>;
   about_company: string;
+  ogrn: string;
+  reg_number_pf: string;
+  okpo: string;
+  reg_number_fss: string;
+  oktmo: string;
 }
 
 export interface IBisinessCost {

@@ -32,6 +32,7 @@ function Card({
     kpp: string;
     company_full_name: string;
     main_okved_name: string;
+    main_okved: string;
     okved: string;
     amount_of_employees: {
       amount_by_nalogru: number;
@@ -42,6 +43,11 @@ function Card({
     registration_date: string;
     taxation_form_name: Array<string>;
     about_company: string;
+    ogrn: string;
+    reg_number_pf: string;
+    okpo: string;
+    reg_number_fss: string;
+    oktmo: string;
   };
   closeCard: () => void
 }) {
@@ -117,6 +123,19 @@ function Card({
           <Vacancies
             currentSection={currentSection}
             inn={companyData.inn}
+          />
+          <Requisites
+            currentSection={currentSection}
+            fullName={companyData.company_full_name}
+            ogrn={companyData.ogrn}
+            regNumberPf={companyData.reg_number_pf}
+            okpo={companyData.okpo}
+            regNumberFss={companyData.reg_number_fss}
+            oktmo={companyData.oktmo}
+            mainOkvedName={companyData.main_okved_name}
+            mainOkved={companyData.main_okved}
+            okveds={companyData.okved}
+            registrationDate={companyData.registration_date}
           />
         </div>
         <CardMenu handleSetSection={handleSetSection}/>
