@@ -52,7 +52,7 @@ function Card({
   closeCard: () => void
 }) {
 
-  const [currentSection, setCurrentSection] = useState<string>('');
+  const [currentSection, setCurrentSection] = useState<string>('aboutCompany');
 
   useEffect(() => {
     if (companyData.inn) {
@@ -138,7 +138,7 @@ function Card({
             registrationDate={companyData.registration_date}
           />
         </div>
-        <CardMenu handleSetSection={handleSetSection}/>
+        <CardMenu handleSetSection={handleSetSection} currentSection={currentSection}/>
       </div>
     </div>
   );
