@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import { Route, Switch } from 'react-router-dom'
 
 import './App.css';
 
@@ -66,8 +67,22 @@ function App() {
 
   return (
     <div className="App">
-      <CompaniesMain allCompanies={companies} isVisible={isCardOpen} openCard={openCard}/>
-      <Card isVisible={isCardOpen} companyData={selectCompany} closeCard={closeCard}/>
+      <Switch>
+        <Route exact path='/'>
+          <CompaniesMain
+            allCompanies={companies}
+            isVisible={isCardOpen}
+            openCard={openCard}
+          />
+        </Route>
+        <Route path='/card'>
+          <Card
+            isVisible={isCardOpen}
+            companyData={selectCompany}
+            closeCard={closeCard}
+          />
+        </Route>
+      </Switch>
     </div>
   );
 }

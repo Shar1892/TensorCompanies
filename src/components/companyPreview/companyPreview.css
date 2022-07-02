@@ -7,6 +7,7 @@
 	height: 50px;
 	padding: 5px 16px;
 	box-sizing: border-box;
+	text-decoration: none;
 }
 
 .company-preview:hover {

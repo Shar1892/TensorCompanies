@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import './cardHeader.css';
 
 function CardHeader({
@@ -37,7 +39,11 @@ function CardHeader({
       </div>
       <h2 className="card-header__company-name">{name}</h2>
       </div>
-      <button className="card-header__close-button" onClick={handlecloseCompany}></button>
+      <NavLink
+        exact to='/'
+        className="card-header__close-button"
+        onClick={handlecloseCompany}
+      ></NavLink>
     </div>
   );
 }
