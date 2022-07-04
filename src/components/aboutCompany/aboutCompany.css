@@ -7,10 +7,6 @@
 	box-sizing: border-box;
 }
 
-.about-company_close {
-	display: none;
-}
-
 .about-company__info-container {
 	max-width: 100%;
 	min-width: 100%;

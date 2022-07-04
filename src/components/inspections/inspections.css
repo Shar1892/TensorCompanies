@@ -6,10 +6,6 @@
 	flex-direction: column;
 }
 
-.inspections_close {
-	display: none;
-}
-
 .inspections__title {
 	margin: 0;
 	font-size: var(--title-text-size);

@@ -6,10 +6,6 @@
 	flex-direction: column;
 }
 
-.contacts_close {
-	display: none;
-}
-
 .contacts__title {
 	margin: 0;
 	font-size: var(--title-text-size);

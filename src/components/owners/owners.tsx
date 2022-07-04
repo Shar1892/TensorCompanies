@@ -31,7 +31,7 @@ function Owners(
   }, [inn, currentSection]);
 
   return (
-    <section className={`owners ${(currentSection === 'owners') ? '' : 'owners_close'}`}>
+    <section className="owners">
       <div className="owners__header">
         <h2 className="owners__title">ВЛАДЕЛЬЦЫ</h2>
         <div className="owners__headers-container">

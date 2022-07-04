@@ -75,13 +75,11 @@ function App() {
             openCard={openCard}
           />
         </Route>
-        <Route path='/card'>
           <Card
             isVisible={isCardOpen}
             companyData={selectCompany}
             closeCard={closeCard}
           />
-        </Route>
       </Switch>
     </div>
   );

@@ -55,7 +55,7 @@ function AboutCompany({
   }, [inn, currentSection]);
 
   return (
-    <section className={`about-company ${ (currentSection === 'aboutCompany') ? '' : 'about-company_close'}`}>
+    <section className="about-company">
       <div className="about-company__info-container">
         <div className="about-company__info">
           <div className="about-company__name-container">

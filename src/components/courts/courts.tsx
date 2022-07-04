@@ -18,7 +18,6 @@ function Courts(
     inn: string;
   }
 ) {
-
   const [allCourts, setAllCourts] = useState<ICourt[]>([]);
   const [allExecutives, setAllExecutives] = useState<IExecutive[]>([]);
 
@@ -58,7 +57,7 @@ function Courts(
   }
 
   return (
-    <section className={`courts ${(currentSection === 'courts') ? '' : 'courts_close'}`}>
+    <section className="courts">
       <div className="courts__courts">
         <h2 className="courts__title">СУДЫ</h2>
         {

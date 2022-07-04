@@ -26,7 +26,7 @@ function CompanyPreview({
 
   return (
     <NavLink
-      to='/card'
+      to='/card/about_company'
       className="company-preview"
       onClick={handleOpenCompany}
     >

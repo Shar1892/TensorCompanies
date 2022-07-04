@@ -7,10 +7,6 @@
 	align-items: center;
 }
 
-.owners_close {
-	display: none;
-}
-
 .owners__header {
 	width: 100%;
 	display: flex;
