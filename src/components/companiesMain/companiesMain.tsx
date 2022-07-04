@@ -16,7 +16,7 @@ function CompaniesMain({
 }) {
 
   return (
-    <div className={`companiesMain ${isVisible ? 'companiesMain_hidden' : ''}`}>
+    <div className="companiesMain">
         <Header />
         <CompaniesList allCompanies={allCompanies} openCard={openCard}/>
     </div>
@@ -24,3 +24,5 @@ function CompaniesMain({
 }
 
 export default CompaniesMain;
+
+// <div className={`companiesMain ${isVisible ? 'companiesMain_hidden' : ''}`}>

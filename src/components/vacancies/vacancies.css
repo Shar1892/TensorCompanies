@@ -6,10 +6,6 @@
 	flex-direction: column;
 }
 
-.vacancies_close {
-	display: none;
-}
-
 .vacancies__title {
 	margin: 0;
 	font-size: var(--title-text-size);

@@ -6,9 +6,9 @@ import { filtrArrToLenghth, changeRecordOfDate } from '../../utils/utils';
 
 import NoData from '../noData/noData';
 
-import './pladges.css';
+import './pledges.css';
 
-function Pladges(
+function Pledges(
   {
     currentSection,
     inn,
@@ -23,7 +23,7 @@ function Pladges(
   const [displaedPledges, setDisplaedPledges] = useState<IPledge[]>([]);
 
   useEffect(() => {
-    if (currentSection === 'pladges') {
+    if (currentSection === 'pledges') {
       getPledges(inn).then((data) => {
         console.log(data[0]);
         setAllPledges(data[0]);
@@ -37,27 +37,27 @@ function Pladges(
   }
 
   return (
-    <section className={`pladges ${(currentSection === 'pladges') ? '' : 'pladges_close'}`}>
-      <h2 className="pladges__title">В ЗАЛОГЕ / В ЛИЗИНГЕ</h2>
+    <section className="pledges">
+      <h2 className="pledges__title">В ЗАЛОГЕ / В ЛИЗИНГЕ</h2>
       {
         allPledges.length ?
         <>
-          <div className="pladges__list">
+          <div className="pledges__list">
             {displaedPledges.map((pledge: IPledge, i: number) => (
-              <div className="pladges__pladge-container" key={i}>
-                <p className="pladges__pladge-date">{changeRecordOfDate(pledge.agreement.publish_date)}</p>
-                <div className="pladges__pladge-info-container">
-                  <p className="pladges__pladge-category">{pledge.category}</p>
-                  <p className="pladges__pladge-pladgee">{pledge.lessee_name}</p>
-                  <p className="pladges__pladge-discription">{pledge.objects[0].description}</p>
+              <div className="pledges__pledge-container" key={i}>
+                <p className="pledges__pledge-date">{changeRecordOfDate(pledge.agreement.publish_date)}</p>
+                <div className="pledges__pledge-info-container">
+                  <p className="pledges__pledge-category">{pledge.category}</p>
+                  <p className="pledges__pledge-pledgee">{pledge.lessee_name}</p>
+                  <p className="pledges__pledge-discription">{pledge.objects[0].description}</p>
                 </div>
-                <p className="pladges__pladge-type">{pledge.type}</p>
+                <p className="pledges__pledge-type">{pledge.type}</p>
               </div>
             ))}
           </div>
           {
             (allPledges.length > displaedPledges.length) &&
-            <button className="pladges__more-button" onClick={showMorePledges}>Ещё</button>
+            <button className="pledges__more-button" onClick={showMorePledges}>Ещё</button>
           }
         </> :
         <NoData />
@@ -66,4 +66,4 @@ function Pladges(
   );
 }
 
-export default Pladges;
+export default Pledges;

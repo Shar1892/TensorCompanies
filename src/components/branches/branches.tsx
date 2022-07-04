@@ -38,7 +38,7 @@ function Branches(
   }
 
   return (
-    <section className={`branches ${(currentSection === 'branches') ? '' : 'branches_close'}`}>
+    <section className="branches">
       <h2 className="branches__title">ФИЛИАЛЫ</h2>
       {
         allBranches.length ?

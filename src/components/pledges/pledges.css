@@ -1,4 +1,4 @@
-.pladges {
+.pledges {
 	width: 100%;
 	padding: var(--block-padding);
 	box-sizing: border-box;
@@ -6,18 +6,14 @@
 	flex-direction: column;
 }
 
-.pladges_close {
-	display: none;
-}
-
-.pladges__title {
+.pledges__title {
 	margin: 0;
 	font-size: var(--title-text-size);
 	color: var(--title-text-color);
 	font-weight: bold;
 }
 
-.pladges__list {
+.pledges__list {
 	width: 100%;
 	margin-top: 10px;
 	display: flex;
@@ -25,7 +21,7 @@
 	align-items: center;
 }
 
-.pladges__pladge-container {
+.pledges__pledge-container {
 	width: 100%;
 	margin-bottom: 5px;
 	display: grid;
@@ -33,7 +29,7 @@
 	column-gap: 5px;
 }
 
-.pladges__pladge-date {
+.pledges__pledge-date {
 	width: 60px;
 	margin: 0;
 	font-size: var(--text-size-normal);
@@ -41,14 +37,14 @@
 	font-weight: normal;
 }
 
-.pladges__pladge-info-container {
+.pledges__pledge-info-container {
 	width: 100%;
 	margin: 0 10px;
 	display: flex;
 	flex-direction: column;
 }
 
-.pladges__pladge-category {
+.pledges__pledge-category {
 	margin: 0;
 	max-width: 350px;
 	font-size: var(--text-size-normal);
@@ -59,7 +55,7 @@
 	overflow: hidden;
 }
 
-.pladges__pladge-pladgee {
+.pledges__pledge-pledgee {
 	margin: 2px 0;
 	max-width: 350px;
 	font-size: var(--text-size-large);
@@ -70,7 +66,7 @@
 	overflow: hidden;
 }
 
-.pladges__pladge-discription {
+.pledges__pledge-discription {
 	margin: 0;
 	max-width: 350px;
 	font-size: var(--text-size-normal);
@@ -81,7 +77,7 @@
 	overflow: hidden;
 }
 
-.pladges__pladge-type {
+.pledges__pledge-type {
 	width: 65px;
 	margin: 0;
 	font-size: var(--text-size-normal);
@@ -90,7 +86,7 @@
 	text-align: right;
 }
 
-.pladges__more-button {
+.pledges__more-button {
 	margin-top: 5px;
 	font-size: var(--text-size-large);
 	color: var(--pale-text-color);
@@ -102,49 +98,49 @@
 	align-self: flex-start;
 }
 
-.pladges__more-button:hover {
+.pledges__more-button:hover {
 	cursor: pointer;
 	color: var(--link-text-color);
 }
 
 @media screen and (min-width: 1024px) {
-	.pladges__pladge-category {
+	.pledges__pledge-category {
 		max-width: 400px;
 	}
 
-	.pladges__pladge-pladgee {
+	.pledges__pledge-pledgee {
 		max-width: 400px;
 	}
 
-	.pladges__pladge-discription {
+	.pledges__pledge-discription {
 		max-width: 400px;
 	}
 }
 
 @media screen and (min-width: 1230px) {
-	.pladges__pladge-category {
+	.pledges__pledge-category {
 		max-width: 570px;
 	}
 
-	.pladges__pladge-pladgee {
+	.pledges__pledge-pledgee {
 		max-width: 570px;
 	}
 
-	.pladges__pladge-discription {
+	.pledges__pledge-discription {
 		max-width: 570px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.pladges__pladge-category {
+	.pledges__pledge-category {
 		max-width: 735px;
 	}
 
-	.pladges__pladge-pladgee {
+	.pledges__pledge-pledgee {
 		max-width: 735px;
 	}
 
-	.pladges__pladge-discription {
+	.pledges__pledge-discription {
 		max-width: 735px;
 	}
 }

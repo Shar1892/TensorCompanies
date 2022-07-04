@@ -6,10 +6,6 @@
 	flex-direction: column;
 }
 
-.courts_close {
-	display: none;
-}
-
 .courts__courts {
 	width: 100%;
 	display: flex;

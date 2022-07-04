@@ -53,7 +53,7 @@ function Contacts(
   }
 
   return (
-    <section className={`contacts ${(currentSection === 'contacts') ? '' : 'contacts_close'}`}>
+    <section className="contacts">
       <h2 className="contacts__title">КОНТАКТЫ</h2>
       <div className="contacts__container">
         <h3 className="contacts__subtitle">Телефоны</h3>

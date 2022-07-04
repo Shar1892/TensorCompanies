@@ -65,7 +65,7 @@ function Vacancies(
   }
 
   return (
-    <section className={`vacancies ${(currentSection === 'vacancies') ? '' : 'vacancies_close'}`}>
+    <section className="vacancies">
       <h2 className="vacancies__title">ВАКАНСИИ</h2>
       {
         allVacancies.length ?

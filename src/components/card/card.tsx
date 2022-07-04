@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Route, Switch } from 'react-router-dom'
 
 import CardHeader from "../cardHeader/cardHeader";
 import AboutCompany from "../aboutCompany/aboutCompany";
@@ -6,7 +7,7 @@ import Owners from "../owners/owners";
 import Branches from "../branches/branches";
 import Contacts from "../contacts/contacts";
 import Courts from "../courts/courts";
-import Pladges from "../pladges/pladges";
+import Pledges from "../pledges/pledges";
 import Inspections from "../inspections/inspections";
 import Vacancies from "../vacancies/vacancies";
 import Requisites from "../requisites/requisites";
@@ -79,64 +80,84 @@ function Card({
         kpp={companyData.kpp}
         name={companyData.company_name}
       />
-    <div className="card__main">
+      <div className="card__main">
         <div className="card__content">
-          <AboutCompany
-            fullName={companyData.company_full_name}
-            mainOkved={companyData.main_okved_name}
-            okveds={companyData.okved}
-            directorName={companyData.director_egrul_name}
-            directorSurname={companyData.director_egrul_surname}
-            directorPatronymic={companyData.director_egrul_patronymic}
-            directorPosition={companyData.director_position}
-            amountOfEmployees={companyData.amount_of_employees}
-            registrationDate={companyData.registration_date}
-            taxationForm={companyData.taxation_form_name}
-            aboutCompanyText={companyData.about_company}
-            inn={companyData.inn}
-            currentSection={currentSection}
-          />
-          <Owners 
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Branches
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Contacts
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Courts
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Pladges
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Inspections
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Vacancies
-            currentSection={currentSection}
-            inn={companyData.inn}
-          />
-          <Requisites
-            currentSection={currentSection}
-            fullName={companyData.company_full_name}
-            ogrn={companyData.ogrn}
-            regNumberPf={companyData.reg_number_pf}
-            okpo={companyData.okpo}
-            regNumberFss={companyData.reg_number_fss}
-            oktmo={companyData.oktmo}
-            mainOkvedName={companyData.main_okved_name}
-            mainOkved={companyData.main_okved}
-            okveds={companyData.okved}
-            registrationDate={companyData.registration_date}
-          />
+          <Switch>
+            <Route exact path="/card/about_company">
+              <AboutCompany
+                fullName={companyData.company_full_name}
+                mainOkved={companyData.main_okved_name}
+                okveds={companyData.okved}
+                directorName={companyData.director_egrul_name}
+                directorSurname={companyData.director_egrul_surname}
+                directorPatronymic={companyData.director_egrul_patronymic}
+                directorPosition={companyData.director_position}
+                amountOfEmployees={companyData.amount_of_employees}
+                registrationDate={companyData.registration_date}
+                taxationForm={companyData.taxation_form_name}
+                aboutCompanyText={companyData.about_company}
+                inn={companyData.inn}
+                currentSection={currentSection}
+              />
+            </Route>
+            <Route path="/card/owners">
+              <Owners 
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/branches">
+              <Branches
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/contacts">
+              <Contacts
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/courts">
+              <Courts
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/pledges">
+              <Pledges
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/inspections">
+              <Inspections
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/vacancies">
+              <Vacancies
+                currentSection={currentSection}
+                inn={companyData.inn}
+              />
+            </Route>
+            <Route path="/card/requisites">
+              <Requisites
+                currentSection={currentSection}
+                fullName={companyData.company_full_name}
+                ogrn={companyData.ogrn}
+                regNumberPf={companyData.reg_number_pf}
+                okpo={companyData.okpo}
+                regNumberFss={companyData.reg_number_fss}
+                oktmo={companyData.oktmo}
+                mainOkvedName={companyData.main_okved_name}
+                mainOkved={companyData.main_okved}
+                okveds={companyData.okved}
+                registrationDate={companyData.registration_date}
+              />
+            </Route>
+          </Switch>
         </div>
         <CardMenu handleSetSection={handleSetSection} currentSection={currentSection}/>
       </div>

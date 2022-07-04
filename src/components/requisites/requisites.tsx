@@ -41,7 +41,7 @@ function Requisites(
   }
 
   return (
-    <section className={`requisites ${(currentSection === 'requisites') ? '' : 'requisites_close'}`}>
+    <section className="requisites">
       <h2 className="requisites__title">РЕКВИЗИТЫ</h2>
       <div className="requisites__name-container">
         <p className="requisites__subtitle">Наименование</p>

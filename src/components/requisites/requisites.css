@@ -6,10 +6,6 @@
 	flex-direction: column;
 }
 
-.requisites_close {
-	display: none;
-}
-
 .requisites__title {
 	margin: 0;
 	font-size: var(--title-text-size);
