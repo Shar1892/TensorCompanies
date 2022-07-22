@@ -1,0 +1,14 @@
+.preloader {
+	width: 100%;
+	margin: 40px;
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.preloader__text {
+	margin: 0;
+	font-size: var(--title-text-size);
+	color: var(--simple-text-color);
+	font-weight: bold;
+}
