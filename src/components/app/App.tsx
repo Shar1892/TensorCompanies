@@ -8,6 +8,7 @@ import {ICompany} from '../../utils/interfaces';
 
 import CompaniesMain from '../companiesMain/companiesMain';
 import Card from '../card/card';
+//import Preloader from '../preloader/preloader';
 
 function App() {
 
@@ -44,11 +45,16 @@ function App() {
     oktmo: '',
   })
 
+  const [isLoadingCompanies, setIsLoadingCompanies] = useState<boolean>(true);
+
   useEffect(() => {
     Api.getCompniesList().then((data) => {
       console.log(data);
       setCompanies(data);
+    }).finally(() => {
+      setIsLoadingCompanies(false);
     })
+
   }, []);
 
   const openCard = (inn: string): void => {
@@ -69,10 +75,11 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/'>
-          <CompaniesMain
+        <CompaniesMain
             allCompanies={companies}
             isVisible={isCardOpen}
             openCard={openCard}
+            isLoading={isLoadingCompanies}
           />
         </Route>
           <Card

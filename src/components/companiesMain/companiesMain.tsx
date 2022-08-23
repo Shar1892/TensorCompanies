@@ -8,17 +8,19 @@ import {ICompany} from '../../utils/interfaces';
 function CompaniesMain({
   allCompanies,
   isVisible,
-  openCard
+  openCard,
+  isLoading,
 }: {
   allCompanies: ICompany[],
   isVisible: boolean,
-  openCard: (inn: string) => void
+  openCard: (inn: string) => void,
+  isLoading: boolean,
 }) {
 
   return (
     <div className="companiesMain">
         <Header />
-        <CompaniesList allCompanies={allCompanies} openCard={openCard}/>
+        <CompaniesList allCompanies={allCompanies} openCard={openCard} isLoading={isLoading}/>
     </div>
   );
 }
