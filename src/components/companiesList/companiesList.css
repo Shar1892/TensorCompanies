@@ -41,3 +41,10 @@
 	color: var(--pale-text-color);
 	font-weight: normal;
 }
+
+.companiesList__container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
