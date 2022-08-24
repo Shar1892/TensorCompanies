@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react';
 import { getInspections } from '../../utils/APICompanies';
 import { IInspection } from '../../utils/interfaces';
 import { filtrArrToLenghth, changeRecordOfDate } from '../../utils/utils';
+
+import Preloader from '../preloader/preloader';
 import NoData from '../noData/noData';
+
 import './inspections.css';
 
 function Inspections(
@@ -17,8 +20,10 @@ function Inspections(
   }
 ) {
 
-  const [allInspections, setAllInspections] = useState<IInspection[]>([])
-  const [displayedInspections, setDisplayedInspections] = useState<IInspection[]>([])
+  const [allInspections, setAllInspections] = useState<IInspection[]>([]);
+  const [displayedInspections, setDisplayedInspections] = useState<IInspection[]>([]);
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (currentSection === 'inspections') {
@@ -26,6 +31,8 @@ function Inspections(
         console.log(data[0]);
         setAllInspections(data[0]);
         setDisplayedInspections(filtrArrToLenghth(data[0], 10))
+      }).finally(() => {
+        setIsLoading(false);
       });
     }
   }, [inn, currentSection]);
@@ -38,6 +45,8 @@ function Inspections(
     <section className="inspections">
       <h2 className="inspections__title">ПРОВЕРКИ</h2>
       {
+        isLoading ?
+        <Preloader /> :
         allInspections.length ?
         <>
           <div className="inspections__list">

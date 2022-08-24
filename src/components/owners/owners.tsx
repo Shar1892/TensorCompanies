@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 
 import './owners.css';
 
+import Preloader from '../preloader/preloader';
 import NoData from '../noData/noData';
 import {IOwner} from '../../utils/interfaces';
 import {getCompaniesOwners} from '../../utils/APICompanies';
@@ -20,12 +21,16 @@ function Owners(
 
   const [ownersList, setOwnersList] = useState<IOwner[]>([]);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   useEffect(() => {
     if (currentSection === 'owners') {
       getCompaniesOwners(inn).then((data) => {
         console.log(data);
         
         setOwnersList(data[0]);
+      }).finally(() => {
+        setIsLoading(false);
       });
     }
   }, [inn, currentSection]);
@@ -41,6 +46,8 @@ function Owners(
         </div>
       </div>
       {
+        isLoading ?
+        <Preloader /> :
         ownersList.length ?
         <div className="owners__list">
           {ownersList.map((owner: IOwner) => (
@@ -59,9 +66,16 @@ function Owners(
         </div> :
         <NoData />
       }
-      
     </section>
   );
 }
 
 export default Owners;
+
+
+/*
+
+isLoading ?
+        <Preloader /> :
+
+*/
