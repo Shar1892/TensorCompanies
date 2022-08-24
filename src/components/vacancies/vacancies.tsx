@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { getVacancies } from '../../utils/APICompanies';
 import { IVacancy } from '../../utils/interfaces'
 import { filtrArrToLenghth } from '../../utils/utils';
+
 import NoData from '../noData/noData';
+import Preloader from '../preloader/preloader';
 
 import './vacancies.css';
 
@@ -20,12 +22,16 @@ function Vacancies(
   const [allVacancies, setAllVacancies] = useState<IVacancy[]>([]);
   const [displayedVacancies, setDisplayedVacancies] = useState<IVacancy[]>([]);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   useEffect(() => {
     if (currentSection === 'vacancies') {
       getVacancies(inn).then((data) => {
         console.log(data[0]);
         setAllVacancies(data[0]);
         setDisplayedVacancies(filtrArrToLenghth(data[0], 10));
+      }).finally(() => {
+        setIsLoading(false);
       });
     }
   }, [inn, currentSection]);
@@ -68,6 +74,8 @@ function Vacancies(
     <section className="vacancies">
       <h2 className="vacancies__title">ВАКАНСИИ</h2>
       {
+        isLoading ?
+        <Preloader /> :
         allVacancies.length ?
         <>
           <div className="vacancies__list">

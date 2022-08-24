@@ -5,6 +5,7 @@ import { IPledge } from '../../utils/interfaces';
 import { filtrArrToLenghth, changeRecordOfDate } from '../../utils/utils';
 
 import NoData from '../noData/noData';
+import Preloader from '../preloader/preloader';
 
 import './pledges.css';
 
@@ -22,12 +23,16 @@ function Pledges(
   const [allPledges, setAllPledges] = useState<IPledge[]>([]);
   const [displaedPledges, setDisplaedPledges] = useState<IPledge[]>([]);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   useEffect(() => {
     if (currentSection === 'pledges') {
       getPledges(inn).then((data) => {
         console.log(data[0]);
         setAllPledges(data[0]);
         setDisplaedPledges(filtrArrToLenghth(data[0], 10));
+      }).finally(() => {
+        setIsLoading(false);
       });
     }
   }, [inn, currentSection]);
@@ -40,6 +45,8 @@ function Pledges(
     <section className="pledges">
       <h2 className="pledges__title">В ЗАЛОГЕ / В ЛИЗИНГЕ</h2>
       {
+        isLoading ?
+        <Preloader /> :
         allPledges.length ?
         <>
           <div className="pledges__list">
