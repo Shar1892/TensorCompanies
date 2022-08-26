@@ -2,11 +2,17 @@ import "./Header.css";
 
 import Search from "../search/search";
 
-function Header() {
+function Header(
+  {
+    searchCompany,
+  }: {
+    searchCompany: (query: string) => void,
+  }
+) {
   return (
     <header className="header">
       <h1 className="header__title">Компании</h1>
-      <Search />
+      <Search searchCompany={searchCompany} />
     </header>
   );
 }
