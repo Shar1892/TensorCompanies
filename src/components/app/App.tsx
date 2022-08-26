@@ -12,8 +12,9 @@ import Card from '../card/card';
 
 function App() {
 
-  const [companies, setCompanies] = useState<ICompany[]>([]);
+  const [allCompanies, setAllCompanies] = useState<ICompany[]>([]);
   const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
+  const [viewCompanies, setViewCompanies] = useState<ICompany[]>([]);
 
   const [selectCompany, setSelectCompany] = useState<ICompany>({
     inn: '',
@@ -50,7 +51,8 @@ function App() {
   useEffect(() => {
     Api.getCompniesList().then((data) => {
       console.log(data);
-      setCompanies(data);
+      setAllCompanies(data);
+      setViewCompanies(data);
     }).finally(() => {
       setIsLoadingCompanies(false);
     })
@@ -59,7 +61,7 @@ function App() {
 
   const openCard = (inn: string): void => {
     setIsCardOpen(true);
-    const openedCompany = companies.find((item) => {
+    const openedCompany = allCompanies.find((item) => {
       return item.inn === inn;
     });
     if (openedCompany) {
@@ -71,15 +73,41 @@ function App() {
     setIsCardOpen(false);
   }
 
+  const foundByNameAndINN = (query: string, companiesArr: ICompany[]): ICompany[] => {
+
+    let foundCompanies: ICompany[] = [];
+
+    let lowerQuery: string = query.toLocaleLowerCase();
+
+    companiesArr.forEach((company: ICompany): void => {
+
+      let lowerCompanyName = company.company_name.toLocaleLowerCase();
+
+      if (~lowerCompanyName.indexOf(lowerQuery) || ~company.inn.indexOf(lowerQuery)) {
+        foundCompanies.push(company);
+      }
+    })
+
+    console.log(foundCompanies);
+
+    return foundCompanies;
+  }
+
+  const searchCompany = (query: string): void => {
+    setViewCompanies(foundByNameAndINN(query, allCompanies));
+    console.log(query);
+  }
+
   return (
     <div className="App">
       <Switch>
         <Route exact path='/'>
         <CompaniesMain
-            allCompanies={companies}
+            companies={viewCompanies}
             isVisible={isCardOpen}
             openCard={openCard}
             isLoading={isLoadingCompanies}
+            searchCompany={searchCompany}
           />
         </Route>
           <Card

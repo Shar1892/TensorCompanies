@@ -6,11 +6,11 @@ import CompanyPreview from "../companyPreview/companyPreview";
 import Preloader from '../preloader/preloader';
 
 function CompaniesList({
-  allCompanies,
+  companies,
   openCard,
   isLoading,
 }: {
-  allCompanies: ICompany[],
+  companies: ICompany[],
   openCard: (inn: string) => void,
   isLoading: boolean,
 }) {
@@ -27,7 +27,7 @@ function CompaniesList({
           isLoading ?
           <Preloader /> :
           <div className="companiesList__container">
-            {allCompanies.map((item: {
+            {companies.map((item: {
               inn: string;
               company_name: string;
               region: string;
