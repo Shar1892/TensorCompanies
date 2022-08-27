@@ -38,7 +38,11 @@ function Search(
         value={currentSearchQuery}
       />
       <div className='search__button-container'>
-        <button className="search__button-reset" type="button" onClick={resetQuery}></button>
+        <button
+          className={`search__button-reset ${currentSearchQuery ? '' : 'search__button-reset_invisible'}`}
+          type="button"
+          onClick={resetQuery}
+        ></button>
         <button className="search__button-search" type="submit"></button>
       </div>
     </form>
