@@ -74,13 +74,10 @@ function App() {
   }
 
   const foundByNameAndINN = (query: string, companiesArr: ICompany[]): ICompany[] => {
-
     let foundCompanies: ICompany[] = [];
-
     let lowerQuery: string = query.toLocaleLowerCase();
 
     companiesArr.forEach((company: ICompany): void => {
-
       let lowerCompanyName = company.company_name.toLocaleLowerCase();
 
       if (~lowerCompanyName.indexOf(lowerQuery) || ~company.inn.indexOf(lowerQuery)) {
@@ -88,14 +85,15 @@ function App() {
       }
     })
 
-    console.log(foundCompanies);
-
     return foundCompanies;
   }
 
   const searchCompany = (query: string): void => {
     setViewCompanies(foundByNameAndINN(query, allCompanies));
-    console.log(query);
+  }
+
+  const resetFoundedCompanies = (): void => {
+    setViewCompanies(allCompanies);
   }
 
   return (
@@ -108,6 +106,7 @@ function App() {
             openCard={openCard}
             isLoading={isLoadingCompanies}
             searchCompany={searchCompany}
+            resetFoundedCompanies={resetFoundedCompanies}
           />
         </Route>
           <Card
