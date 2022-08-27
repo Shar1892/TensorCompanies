@@ -4,6 +4,7 @@ import {ICompany} from '../../utils/interfaces';
 
 import CompanyPreview from "../companyPreview/companyPreview";
 import Preloader from '../preloader/preloader';
+import NoResult from "../noResult/noResult";
 
 function CompaniesList({
   companies,
@@ -27,18 +28,24 @@ function CompaniesList({
           isLoading ?
           <Preloader /> :
           <div className="companiesList__container">
-            {companies.map((item: {
-              inn: string;
-              company_name: string;
-              region: string;
-              director_egrul_surname: string;
-              director_egrul_name: string;
-              director_egrul_patronymic: string;
-              activity_kind: string;
-              kpp: string;
-            }) => (
-              <CompanyPreview companyData={item} key={item.inn} openCard={openCard}/>
-            ))}
+            {
+              companies.length ?
+              <>
+              {companies.map((item: {
+                inn: string;
+                company_name: string;
+                region: string;
+                director_egrul_surname: string;
+                director_egrul_name: string;
+                director_egrul_patronymic: string;
+                activity_kind: string;
+                kpp: string;
+              }) => (
+                <CompanyPreview companyData={item} key={item.inn} openCard={openCard}/>
+              ))}
+            </> :
+              <NoResult />
+            }
           </div>
         }
       
