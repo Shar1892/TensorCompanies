@@ -64,6 +64,10 @@
 	outline: 0;
 }
 
+.search__button-reset_invisible {
+	display: none;
+}
+
 .search__button-reset:hover {
 	cursor: pointer;
 }
