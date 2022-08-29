@@ -6,13 +6,15 @@ function Search(
   {
     searchCompany,
     resetFoundedCompanies,
+    searchValue,
   }: {
     searchCompany: (query: string) => void,
     resetFoundedCompanies: () => void,
+    searchValue: string,
   }
 ) {
 
-  const [currentSearchQuery, setCurrentSearchQuery] = useState<string>('');
+  const [currentSearchQuery, setCurrentSearchQuery] = useState<string>(searchValue);
 
   const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
 		setCurrentSearchQuery(evt.target.value);

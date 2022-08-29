@@ -46,6 +46,8 @@ function App() {
     oktmo: '',
   });
 
+  const [searchValue, setSearchValue] = useState<string>('');
+
   const [isLoadingCompanies, setIsLoadingCompanies] = useState<boolean>(true);
 
   useEffect(() => {
@@ -90,10 +92,12 @@ function App() {
 
   const searchCompany = (query: string): void => {
     setViewCompanies(foundByNameAndINN(query, allCompanies));
+    setSearchValue(query);
   }
 
   const resetFoundedCompanies = (): void => {
     setViewCompanies(allCompanies);
+    setSearchValue('');
   }
 
   return (
@@ -107,6 +111,7 @@ function App() {
             isLoading={isLoadingCompanies}
             searchCompany={searchCompany}
             resetFoundedCompanies={resetFoundedCompanies}
+            searchValue={searchValue}
           />
         </Route>
           <Card
