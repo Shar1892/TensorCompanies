@@ -12,6 +12,7 @@ function CompaniesMain({
   isLoading,
   searchCompany,
   resetFoundedCompanies,
+  searchValue,
 }: {
   companies: ICompany[],
   isVisible: boolean,
@@ -19,11 +20,16 @@ function CompaniesMain({
   isLoading: boolean,
   searchCompany: (query: string) => void,
   resetFoundedCompanies: () => void,
+  searchValue: string,
 }) {
 
   return (
     <div className="companiesMain">
-        <Header searchCompany={searchCompany} resetFoundedCompanies={resetFoundedCompanies}/>
+        <Header 
+          searchCompany={searchCompany}
+          resetFoundedCompanies={resetFoundedCompanies}
+          searchValue={searchValue}
+        />
         <CompaniesList companies={companies} openCard={openCard} isLoading={isLoading}/>
     </div>
   );
