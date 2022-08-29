@@ -44,7 +44,7 @@ function App() {
     okpo: '',
     reg_number_fss: '',
     oktmo: '',
-  })
+  });
 
   const [isLoadingCompanies, setIsLoadingCompanies] = useState<boolean>(true);
 
