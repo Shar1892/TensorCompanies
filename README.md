@@ -1,3 +1,32 @@
+# Всё о компаниях
+
+Проект предоставляет данные с демо-версии API "Всё о компаниях" https://api.sbis.ru/vok-demo .
+Данные на интерфейс передаем с помошью прокси-сервера https://github.com/Shar1892/TensorAPIProxyServer .
+
+## Реализовано:
+
+1. Реестр контрагентов, поиск по реестре
+2. Карточка контрагента с разделами, в разделах данные по филиалам, контактам, владельцам, судам, проверкам, залогам, вакансиям
+
+## Использованные технологии:
+
+TypeScript, React.js
+
+## Установка и запуск
+
+1. Запуск прокси-сервера
+   1.1 Клонируем репозиторий с https://github.com/Shar1892/TensorAPIProxyServer git clone
+   1.2 Устанавливаем зависимости npm install
+   1.3 Запускаем npm start
+
+2. Клонирем текущий репозиторий git clone
+3. Устанавливаем зависимости npm install
+4. Запускаем npm start
+
+## Демо
+
+Демо-видео в папке demo данного репозитория
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
